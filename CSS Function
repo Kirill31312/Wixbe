@@ -19,9 +19,3 @@ while game:GetService("RunService").RenderStepped:Wait() do
 			for i,v in pairs(game.Players.LocalPlayer.PlayerGui:WaitForChild("Game").Backdrop.Main.World.Objects:GetDescendants()) do
 				if v.ClassName == "ImageLabel" then
 					v.ImageColor3 = Color3.new(1, 0, 0)
-				end
-			end
-		end
-		-- The function that takes place when the button is pressed
-	end,
-})
