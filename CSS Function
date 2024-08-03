@@ -1,0 +1,27 @@
+while game:GetService("RunService").RenderStepped:Wait() do
+			if BrokePack == true then break end
+			game:GetService("ReplicatedStorage").Objects.Sonic_S1.Sprite.Image = "rbxassetid://8351052419"
+			if game.Players.LocalPlayer.PlayerGui:WaitForChild("MusicHandler")["Music Script"].Loop.SoundId == "rbxassetid://304472067" then
+				game.Players.LocalPlayer.PlayerGui:WaitForChild("MusicHandler")["Music Script"].Loop.PlaybackSpeed = 1
+				game.Players.LocalPlayer.PlayerGui:WaitForChild("MusicHandler")["Music Script"].Intro.TimePosition = 9999
+				game.Players.LocalPlayer.PlayerGui:WaitForChild("MusicHandler")["Music Script"].Loop.SoundId = "rbxassetid://1427189017"
+			elseif game.Players.LocalPlayer.PlayerGui:WaitForChild("MusicHandler")["Music Script"].Loop.SoundId ~= "rbxassetid://1427189017" then
+				game.Players.LocalPlayer.PlayerGui:WaitForChild("MusicHandler")["Music Script"].Loop.PlaybackSpeed = 0.5
+			end
+			for i,v in pairs(game.Players.LocalPlayer.PlayerGui:WaitForChild("Game").Backdrop.Main.World.Tiles:GetChildren()) do
+				v.ImageColor3 = Color3.new(1, 0, 0)
+			end
+			for i,v in pairs(game.Players.LocalPlayer.PlayerGui:WaitForChild("Game").Backdrop.Main.Engine:GetChildren()) do
+				if v.ClassName == "Sound" then
+					v.PlaybackSpeed = 0.75
+				end
+			end
+			for i,v in pairs(game.Players.LocalPlayer.PlayerGui:WaitForChild("Game").Backdrop.Main.World.Objects:GetDescendants()) do
+				if v.ClassName == "ImageLabel" then
+					v.ImageColor3 = Color3.new(1, 0, 0)
+				end
+			end
+		end
+		-- The function that takes place when the button is pressed
+	end,
+})
